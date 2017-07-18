@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 
 class Hello extends React.Component{
     render(){
@@ -12,7 +13,7 @@ class Hello extends React.Component{
 class World extends React.Component{
     render(){
         return(
-        <h1>World</h1>
+        <h1 className='foo'>World</h1>
         );
     }
 }
