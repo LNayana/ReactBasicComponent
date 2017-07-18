@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import TodoItem from './components/TodoItem.js'; // relative path
 
 class TodoList extends React.Component{
     constructor(){
@@ -46,14 +47,6 @@ this.setState({tasks:tasks});
                 
             }
             </ul>
-        );
-    }
-}
-
-class TodoItem extends React.Component{
-    render(){
-        return (
-            <li onClick={ () =>{ this.props.clickHandler(this.props.index);}} className={this.props.detail.completed ? 'completed':''}>{this.props.detail.name}</li>
         );
     }
 }
