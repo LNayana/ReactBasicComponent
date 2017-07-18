@@ -1,36 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
-class Hello extends React.Component{
+class TodoList extends React.Component{
     constructor(){
-        super();//It calls React.Component
-        this.name = 'Hello';
+        super();
+        this.state={
+            names:['User 1','User 2','User 3']
+        }
     }
     render(){
         return (
-            <h1>{this.name}</h1>
+            <ul>
+            {
+                this.state.names.map(function(name){
+                return <TodoItem key={name} detail={name} />
+                })
+                
+            }
+            </ul>
         );
     }
 }
 
-class World extends React.Component{
-    render(){
-        return(
-        <h1 className='foo'>World</h1>
-        );
-    }
-}
-
-class HelloWorld extends React.Component{
+class TodoItem extends React.Component{
     render(){
         return (
-        <div>
-            <Hello />
-            <World />
-            </div>
+            <li>{this.props.detail}</li>
         );
     }
 }
-
-ReactDOM.render(<HelloWorld/>,document.getElementById('root'));
+                
+ReactDOM.render(<TodoList/>,document.getElementById('root'));
