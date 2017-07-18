@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Hello extends React.Component{
+    getName(){
+      return  'Hello';  
+    }
     render(){
         return (
-            <h1>Hello</h1>
+            <h1>{this.getName()}</h1>
         );
     }
 }
