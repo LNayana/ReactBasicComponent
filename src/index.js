@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Hello extends React.Component{
-    getName(){
-      return  'Hello';  
+    constructor(){
+        super();//It calls React.Component
+        this.name = 'Hello';
     }
     render(){
         return (
-            <h1>{this.getName()}</h1>
+            <h1>{this.name}</h1>
         );
     }
 }
